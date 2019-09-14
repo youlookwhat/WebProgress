@@ -6,21 +6,21 @@
 
  - xml文件引入：
 
- ```xml
+	```xml
  <me.jingbin.library.WebProgress
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="2dp" />
- ```
+    ```
 
 - 显示处理：
 
- ```java
- mProgress.show(); // 显示
- mProgress.setWebProgress(50);  // 设置进度
- mProgress.setColor("#ff0000"); // 设置颜色
- mProgress.hide(); // 隐藏
- ```
+	```java
+	 mProgress.show(); // 显示
+	 mProgress.setWebProgress(50);  // 设置进度
+	 mProgress.setColor("#ff0000"); // 设置颜色
+	 mProgress.hide(); // 隐藏
+   ```
 
 ## Thank
 此类是从项目[Justson/AgentWeb-WebIndicator](https://github.com/Justson/AgentWeb/blob/master/agentweb-core/src/main/java/com/just/agentweb/WebIndicator.java)中将处理WebView进度条剥离出来的，在此基础上进行优化后合并为一个类，便于导入到自己的项目中。其中大部分代码出自原作者，感谢作者的开源精神。
