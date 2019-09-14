@@ -7,10 +7,10 @@
  - xml文件引入：
 
 	```xml
- <me.jingbin.library.WebProgress
-        android:id="@+id/progress"
-        android:layout_width="match_parent"
-        android:layout_height="2dp" />
+	 <me.jingbin.library.WebProgress
+	        android:id="@+id/progress"
+	        android:layout_width="match_parent"
+	        android:layout_height="2dp" />
     ```
 
 - 显示处理：
