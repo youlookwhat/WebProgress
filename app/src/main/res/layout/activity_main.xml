@@ -10,16 +10,33 @@
         android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <me.jingbin.library.WebProgress
+        android:id="@+id/progressShader"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <me.jingbin.library.WebProgress
         android:id="@+id/progress2"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
+        android:background="#11000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.jingbin.library.WebProgress
+        android:id="@+id/progressShader2"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="118dp"
         android:background="#11000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress"
@@ -29,7 +46,16 @@
         android:id="@+id/progress3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.jingbin.library.WebProgress
+        android:id="@+id/progressShader3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="198dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress"
         app:layout_constraintTop_toTopOf="parent" />
@@ -38,7 +64,17 @@
         android:id="@+id/progress4"
         android:layout_width="match_parent"
         android:layout_height="3dp"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="260dp"
+        android:background="#11000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <me.jingbin.library.WebProgress
+        android:id="@+id/progressShader4"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="278dp"
         android:background="#11000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progress"

@@ -8,7 +8,9 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -113,6 +115,9 @@ public class WebProgress extends FrameLayout {
         mTargetHeight = dip2px(WEB_PROGRESS_DEFAULT_HEIGHT);
     }
 
+    /**
+     * 设置单色进度条
+     */
     public void setColor(int color) {
         this.mColor = color;
         mPaint.setColor(color);
@@ -120,6 +125,21 @@ public class WebProgress extends FrameLayout {
 
     public void setColor(String color) {
         this.setColor(Color.parseColor(color));
+    }
+
+    public void setColor(int startColor, int endColor) {
+        LinearGradient linearGradient = new LinearGradient(0, 0, mTargetWidth, mTargetHeight, startColor, endColor, Shader.TileMode.CLAMP);
+        mPaint.setShader(linearGradient);
+    }
+
+    /**
+     * 设置渐变色进度条
+     *
+     * @param startColor 开始颜色
+     * @param endColor   结束颜色
+     */
+    public void setColor(String startColor, String endColor) {
+        this.setColor(Color.parseColor(startColor), Color.parseColor(endColor));
     }
 
     @Override
