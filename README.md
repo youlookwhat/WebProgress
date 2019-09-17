@@ -23,6 +23,37 @@
 	 mProgress.hide(); // 隐藏
    ```
 
+### in WebView
+ - 显示进度条：
+
+	```java
+	mWebView.loadUrl(mUrl);
+	mProgress.show();
+	```
+
+ - 处理返回进度:
+
+	```java
+	@Override
+    public void onProgressChanged(WebView view, int newProgress) {
+        super.onProgressChanged(view, newProgress);
+        mProgress.setWebProgress(newProgress);
+    }
+	```
+
+ - 页面加载结束时:
+
+	```java
+	 @Override
+    public void onPageFinished(WebView view, String url) {
+        // html加载完成之后，无网隐藏进度条
+        if (!CheckNetwork.isNetworkConnected(this)) {
+            mProgress.hide();
+        }
+        super.onPageFinished(view, url);
+    }
+	```
+
 ## Thanks
 此类是从项目[Justson/AgentWeb-WebIndicator](https://github.com/Justson/AgentWeb/blob/master/agentweb-core/src/main/java/com/just/agentweb/WebIndicator.java)中将处理WebView进度条剥离出来的，在此基础上进行优化后合并为一个类，便于导入到自己的项目中。其中大部分代码出自原作者，感谢作者的开源精神。
 
