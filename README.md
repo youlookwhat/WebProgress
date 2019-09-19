@@ -1,6 +1,13 @@
 ## WebProgress
 一款Android WebView进度条显示控件，使其加载进度平滑过渡。
 
+### Gif Preview
+
+![演示图](https://raw.githubusercontent.com/youlookwhat/WebProgress/master/image.gif)
+
+
+gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏览器](https://fir.im/webviewstudy)
+
 ## Use
  - 建议直接将类拷贝到项目中：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/library/WebProgress.java)
 
@@ -23,7 +30,7 @@
 	 mProgress.hide(); // 隐藏
    ```
 
-### in WebView
+### [in WebView](https://github.com/youlookwhat/WebViewStudy/blob/master/app/src/main/java/com/example/jingbin/webviewstudy/WebViewActivity.java)
  - 显示进度条：
 
 	```java
