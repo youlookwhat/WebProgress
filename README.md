@@ -1,4 +1,4 @@
-## WebProgress
+## WebProgress  [![](https://jitpack.io/v/youlookwhat/WebProgress.svg)](https://jitpack.io/#youlookwhat/WebProgress)
 一款Android WebView进度条显示控件，使其加载进度平滑过渡。
 
 ### Gif Preview
