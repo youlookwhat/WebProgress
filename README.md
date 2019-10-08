@@ -10,16 +10,17 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 
 ## Use
  - 引入库
+
   -  先在 build.gradle 的 repositories 添加:
  
       ```java
-allprojects {
-			repositories {
-				...
-				maven { url "https://jitpack.io" }
+		allprojects {
+					repositories {
+						...
+						maven { url "https://jitpack.io" }
+					}
 			}
-	}
-```
+     ```
 
   -  然后在dependencies添加:
  
@@ -27,7 +28,7 @@ allprojects {
 dependencies {
 	        implementation 'com.github.youlookwhat:WebProgress:1.0.0'
 	}
-```
+     ```
 
  - 或者直接将类拷贝到项目中：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/library/WebProgress.java)
 
