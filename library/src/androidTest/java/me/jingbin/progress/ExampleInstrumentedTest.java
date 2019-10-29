@@ -1,4 +1,4 @@
-package me.jingbin.library;
+package me.jingbin.progress;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
