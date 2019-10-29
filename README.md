@@ -24,7 +24,7 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
  
      ```java
 		dependencies {
-		    implementation 'com.github.youlookwhat:WebProgress:1.0.0'
+		    implementation 'com.github.youlookwhat:WebProgress:1.1.0'
 		}
      ```
 
@@ -33,7 +33,7 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 - xml文件引入：
 
 	```xml
-	 <me.jingbin.library.WebProgress
+	 <me.jingbin.progress.WebProgress
 	        android:id="@+id/progress"
 	        android:layout_width="match_parent"
 	        android:layout_height="2dp" />
@@ -81,7 +81,7 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 	```
 
 ## Thanks
-此类是从项目[Justson/AgentWeb-WebIndicator](https://github.com/Justson/AgentWeb/blob/master/agentweb-core/src/main/java/com/just/agentweb/WebIndicator.java)中将处理WebView进度条剥离出来的，在此基础上进行优化后合并为一个类，便于导入到自己的项目中。其中大部分代码出自原作者，感谢作者的开源精神。
+此类是从项目[Justson/AgentWeb-WebIndicator](https://github.com/Justson/AgentWeb/blob/master/agentweb-core/src/main/java/com/just/agentweb/WebIndicator.java)中将处理WebView进度条剥离出来的，在此基础上进行优化后合并为一个类，便于导入到自己的项目中，感谢作者的开源精神。如果此项目帮助到你，请给一个Star，非常感谢！
 
 优化处：
 
