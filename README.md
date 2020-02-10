@@ -1,15 +1,15 @@
 ## WebProgress  [![](https://jitpack.io/v/youlookwhat/WebProgress.svg)](https://jitpack.io/#youlookwhat/WebProgress)
-一款Android WebView进度条显示控件，使其加载进度平滑过渡。
+An Android WebView progress bar display control, so that its loading progress smooth transition.
 
 ### Gif Preview
 
-![演示图](https://raw.githubusercontent.com/youlookwhat/WebProgress/master/image.gif)
+![demo](https://raw.githubusercontent.com/youlookwhat/WebProgress/master/image.gif)
 
 
-gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏览器](https://fir.im/webviewstudy)
+GIF may have a point card to download a WebView project using this control for viewing：[网页浏览器](https://fir.im/webviewstudy)
 
 ## Use
--  先在 build.gradle 的 repositories 添加:
+-  Add it in your root build.gradle at the end of repositories:
  
 	```java
 	allprojects {
@@ -20,7 +20,7 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 	}
 	```
 
--  然后在dependencies添加:
+-  Add the dependency:
  
      ```java
 		dependencies {
@@ -28,9 +28,9 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 		}
      ```
 
-- 或者直接将类拷贝到项目中：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/library/WebProgress.java)
+- Or just copy the class directly into the project：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/library/WebProgress.java)
 
-- xml文件引入：
+- xml：
 
 	```xml
 	 <me.jingbin.progress.WebProgress
@@ -39,25 +39,25 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
 	        android:layout_height="2dp" />
     ```
 
-- 显示处理：
+- code handle：
 
 	```java
-	 mProgress.show(); // 显示
+	 mProgress.show();                          // 显示
 	 mProgress.setWebProgress(50);              // 设置进度
 	 mProgress.setColor("#D81B60");             // 设置颜色
 	 mProgress.setColor("#00D81B60","#D81B60"); // 设置渐变色
-	 mProgress.hide(); // 隐藏
+	 mProgress.hide();                          // 隐藏
    ```
 
 ### [in WebView](https://github.com/youlookwhat/WebViewStudy/blob/master/app/src/main/java/com/example/jingbin/webviewstudy/WebViewActivity.java)
- - 显示进度条：
+ - show WebProgress：
 
 	```java
 	mWebView.loadUrl(mUrl);
 	mProgress.show();
 	```
 
- - 处理返回进度:
+ - onProgressChanged handle:
 
 	```java
 	@Override
@@ -67,7 +67,7 @@ gif可能有点卡，可下载使用此控件的WebView项目查看：[网页浏
     }
 	```
 
- - 页面加载结束时:
+ - onPageFinished handle:
 
 	```java
 	 @Override
