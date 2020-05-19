@@ -6,7 +6,7 @@ An Android WebView progress bar display control, so that its loading progress sm
 ![demo](https://raw.githubusercontent.com/youlookwhat/WebProgress/master/image.gif)
 
 
-GIF may have a point card to download a WebView project using this control for viewing：[网页浏览器](https://fir.im/webviewstudy)
+GIF may have a point card to download a WebView project using this control for viewing：[网页浏览器](http://d.7short.com/webviewstudy)
 
 ## Use
 -  Add it in your root build.gradle at the end of repositories:
@@ -28,7 +28,7 @@ GIF may have a point card to download a WebView project using this control for v
 		}
      ```
 
-- Or just copy the class directly into the project：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/library/WebProgress.java)
+- Or just copy the class directly into the project：[WebProgress](https://github.com/youlookwhat/WebProgress/blob/master/library/src/main/java/me/jingbin/progress/WebProgress.java)
 
 - xml：
 
@@ -36,7 +36,8 @@ GIF may have a point card to download a WebView project using this control for v
 	 <me.jingbin.progress.WebProgress
 	        android:id="@+id/progress"
 	        android:layout_width="match_parent"
-	        android:layout_height="2dp" />
+	        android:layout_height="2dp" 
+	        android:visibility="gone" />
     ```
 
 - code handle：
@@ -49,7 +50,7 @@ GIF may have a point card to download a WebView project using this control for v
 	 mProgress.hide();                          // 隐藏
    ```
 
-### [in WebView](https://github.com/youlookwhat/WebViewStudy/blob/master/app/src/main/java/com/example/jingbin/webviewstudy/WebViewActivity.java)
+### [in WebView](https://github.com/youlookwhat/ByWebView/blob/master/app/src/main/java/com/example/jingbin/webviewstudy/WebViewActivity.java)
  - show WebProgress：
 
 	```java
