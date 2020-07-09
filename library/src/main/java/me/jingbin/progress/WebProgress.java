@@ -41,6 +41,7 @@ import android.widget.FrameLayout;
  * 3. 修改消失动画时长，使其消失时看到可以进度跑完
  * 4. [2019.9.29] 修复当第一次进度返回 0 或超过 10，出现不显示进度条的问题
  * 5. 能显示渐变色
+ * 6. 进度在95-100时再次开始进度条透明度问题
  *
  * @author jingbin
  * Link to https://github.com/youlookwhat/WebProgress
@@ -174,7 +175,7 @@ public class WebProgress extends FrameLayout {
         int h = MeasureSpec.getSize(heightMeasureSpec);
 
         if (wMode == MeasureSpec.AT_MOST) {
-            w = w <= getContext().getResources().getDisplayMetrics().widthPixels ? w : getContext().getResources().getDisplayMetrics().widthPixels;
+            w = Math.min(w, getContext().getResources().getDisplayMetrics().widthPixels);
         }
         if (hMode == MeasureSpec.AT_MOST) {
             h = mTargetHeight;
@@ -189,7 +190,7 @@ public class WebProgress extends FrameLayout {
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        canvas.drawRect(0, 0, mCurrentProgress / 100 * Float.valueOf(this.getWidth()), this.getHeight(), mPaint);
+        canvas.drawRect(0, 0, mCurrentProgress / 100 * (float) this.getWidth(), this.getHeight(), mPaint);
     }
 
     @Override
@@ -202,7 +203,7 @@ public class WebProgress extends FrameLayout {
             CURRENT_MAX_UNIFORM_SPEED_DURATION = MAX_UNIFORM_SPEED_DURATION;
         } else {
             //取比值
-            float rate = this.mTargetWidth / Float.valueOf(screenWidth);
+            float rate = this.mTargetWidth / (float) screenWidth;
             CURRENT_MAX_UNIFORM_SPEED_DURATION = (int) (MAX_UNIFORM_SPEED_DURATION * rate);
             CURRENT_MAX_DECELERATE_SPEED_DURATION = (int) (MAX_DECELERATE_SPEED_DURATION * rate);
         }
@@ -220,7 +221,9 @@ public class WebProgress extends FrameLayout {
         if (mAnimator != null && mAnimator.isStarted()) {
             mAnimator.cancel();
         }
-        mCurrentProgress = mCurrentProgress == 0f ? 0.00000001f : mCurrentProgress;
+        mCurrentProgress = mCurrentProgress == 0 ? 0.00000001f : mCurrentProgress;
+        // 可能由于透明度造成突然出现的问题
+        setAlpha(1);
 
         if (!isFinished) {
             ValueAnimator mAnimator = ValueAnimator.ofFloat(mCurrentProgress, v);
@@ -233,7 +236,7 @@ public class WebProgress extends FrameLayout {
         } else {
 
             ValueAnimator segment95Animator = null;
-            if (mCurrentProgress < 95f) {
+            if (mCurrentProgress < 95) {
                 segment95Animator = ValueAnimator.ofFloat(mCurrentProgress, 95);
                 float residue = 1f - mCurrentProgress / 100f - 0.05f;
                 segment95Animator.setInterpolator(new LinearInterpolator());
@@ -293,7 +296,7 @@ public class WebProgress extends FrameLayout {
     }
 
     private void doEnd() {
-        if (TAG == FINISH && mCurrentProgress == 100f) {
+        if (TAG == FINISH && mCurrentProgress == 100) {
             setVisibility(GONE);
             mCurrentProgress = 0f;
             this.setAlpha(1f);
@@ -322,9 +325,14 @@ public class WebProgress extends FrameLayout {
         return (int) (dpValue * scale + 0.5f);
     }
 
+    public WebProgress setHeight(int heightDp) {
+        this.mTargetHeight = dip2px(heightDp);
+        return this;
+    }
+
     public void setProgress(float progress) {
         // fix 同时返回两个 100，产生两次进度条的问题；
-        if (TAG == UN_START && progress == 100f) {
+        if (TAG == UN_START && progress == 100) {
             setVisibility(View.GONE);
             return;
         }
@@ -332,7 +340,7 @@ public class WebProgress extends FrameLayout {
         if (getVisibility() == View.GONE) {
             setVisibility(View.VISIBLE);
         }
-        if (progress < 95f) {
+        if (progress < 95) {
             return;
         }
         if (TAG != FINISH) {
