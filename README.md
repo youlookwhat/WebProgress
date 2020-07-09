@@ -24,7 +24,7 @@ GIF may have a point card to download a WebView project using this control for v
  
      ```java
 		dependencies {
-		    implementation 'com.github.youlookwhat:WebProgress:1.1.0'
+		    implementation 'com.github.youlookwhat:WebProgress:1.2.0'
 		}
      ```
 
@@ -91,6 +91,7 @@ GIF may have a point card to download a WebView project using this control for v
  * 3. [2019.9.29] 修复当第一次进度返回 0 或超过 10，出现不显示进度条的问题
  * 4. 修复当一条进度没跑完，又点击其他链接开始第二次进度时，第二次进度不出现的问题
  * 5. 修改消失动画时长，使其消失时可以看到进度跑完
+ * 6. 修复进度在95-100时再次开始进度条透明度问题
 
 ## End
  - 有问题或更好的建议，欢迎提[Issues](https://github.com/youlookwhat/WebProgress/issues)，我会及时处理，谢谢。
