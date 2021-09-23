@@ -6,7 +6,7 @@ An Android WebView progress bar display control, so that its loading progress sm
 ![demo](https://raw.githubusercontent.com/youlookwhat/WebProgress/master/image.gif)
 
 
-GIF may have a point card to download a WebView project using this control for viewing：[网页浏览器](https://github.com/youlookwhat/ByWebView/raw/master/art/ByWebView-3.0.1.apk)
+GIF may have a point card to download a WebView project using this control for viewing：[网页浏览器](https://github.com/youlookwhat/download/raw/main/ByWebView.apk)
 
 ## Use
 -  Add it in your root build.gradle at the end of repositories:
